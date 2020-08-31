@@ -54,15 +54,15 @@ xdg-settings set default-web-browser garcon.desktop
 export BROWSER=$original_browser
 
 # Enable Chrome OS window management from keyboard in linux apps
-# Still needs a way to pass Alt+Tab from fullscreen linux apps
-# keycode 23 (keysym 0xff09, Tab)
 if [ ! -f "$HOME/.config/systemd/user/sommelier@.service.d/cros-sommelier-override.conf" ]; then
 mkdir -p .config/systemd/user/sommelier@.service.d/
 mkdir -p .config/systemd/user/sommelier-x@.service.d/
 echo -e "[Service]
-Environment=\"SOMMELIER_ACCELERATORS=Super_L,<Alt>bracketleft,<Alt>bracketright,<Alt>minus,<Alt>equal\"" > $HOME/.config/systemd/user/sommelier@.service.d/cros-sommelier-override.conf
+Environment=\"SOMMELIER_ACCELERATORS=Super_L,<Alt>tab,<Alt>bracketleft,<Alt>bracketright,<Alt>minus,<Alt>equal\"" > $HOME/.config/systemd/user/sommelier@.service.d/cros-sommelier-override.conf
 echo -e "[Service]
-Environment=\"SOMMELIER_ACCELERATORS=Super_L,<Alt>bracketleft,<Alt>bracketright,<Alt>minus,<Alt>equal\"" > $HOME/.config/systemd/user/sommelier-x@.service.d/cros-sommelier-override.conf
+Environment=\"SOMMELIER_ACCELERATORS=Super_L,<Alt>tab,<Alt>bracketleft,<Alt>bracketright,<Alt>minus,<Alt>equal\"" > $HOME/.config/systemd/user/sommelier-x@.service.d/cros-sommelier-override.conf
+systemctl --user daemon-reload
+systemctl --user restart sommelier-x@0.service
 fi
 
 # Finished
