@@ -25,6 +25,7 @@ echo -e "[👢] VS Code display name shortened.\n"
 # Add basic settings for VS Code
 if [ ! -f "$HOME/.config/Code/User/settings.json" ]; then
   echo -e "[👢] Adding basic settings for VS Code."
+  touch $HOME/.config/Code/User/settings.json
   echo -e "{
   \"workbench.colorTheme\": \"Default Light+\",
   \"window.titleBarStyle\": \"custom\",
@@ -37,7 +38,7 @@ fi
 
 echo -e "[👢] Installing GitHub Desktop."
 sudo apt install -y github-desktop
-echo -e "[👢] GitHub Desktop installed."
+echo -e "[👢] GitHub Desktop installed.\n"
 
 # Install flatpak
 # Required to install Apostrophe
@@ -55,7 +56,7 @@ echo -e "[👢] Useful debian packages installed.\n"
 # Make URLs from linux apps open in Chrome
 if [ ! -f "/usr/share/applications/garcon.desktop" ]; then
   echo -e "[👢] Configuring URLs to open in Chrome."
-  echo -e "[Desktop Entry]
+  echo "[Desktop Entry]
 Type=Application
 Name=Garcon URL Handler
 NoDisplay=true
