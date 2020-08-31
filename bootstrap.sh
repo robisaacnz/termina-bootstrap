@@ -60,8 +60,10 @@ if [ ! -f "$HOME/.config/systemd/user/sommelier@.service.d/cros-sommelier-overri
 mkdir -p .config/systemd/user/sommelier@.service.d/
 mkdir -p .config/systemd/user/sommelier-x@.service.d/
 echo -e "[Service]
+Environment=\"SOMMELIER_FRAME_COLOR=#F2F2F2\"
 Environment=\"SOMMELIER_ACCELERATORS=Super_L,<Alt>tab,<Alt>bracketleft,<Alt>bracketright,<Alt>minus,<Alt>equal\"" > $HOME/.config/systemd/user/sommelier@.service.d/cros-sommelier-override.conf
 echo -e "[Service]
+Environment=\"SOMMELIER_FRAME_COLOR=#F2F2F2\"
 Environment=\"SOMMELIER_ACCELERATORS=Super_L,<Alt>tab,<Alt>bracketleft,<Alt>bracketright,<Alt>minus,<Alt>equal\"" > $HOME/.config/systemd/user/sommelier-x@.service.d/cros-sommelier-override.conf
 systemctl --user daemon-reload
 systemctl --user restart sommelier-x@0.service
