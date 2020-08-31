@@ -16,6 +16,7 @@ sudo apt install -y ./vscode.deb && rm ./vscode.deb
 
 # Patch VS Code to shorten display name
 sudo sed -i 's/Visual Studio Code/Code/g' /usr/share/applications/code.desktop
+sudo touch /usr/share/applications/.garcon_trigger
 
 # Add basic settings for VS Code
 if [ ! -f "$HOME/.config/Code/User/settings.json" ]; then
