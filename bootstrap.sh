@@ -65,4 +65,5 @@ echo -e "[Service]
 Environment=\"SOMMELIER_ACCELERATORS=Super_L,<Alt>bracketleft,<Alt>bracketright,<Alt>minus,<Alt>equal\"" > $HOME/.config/systemd/user/sommelier-x@.service.d/cros-sommelier-override.conf
 fi
 
-
+# Finished
+echo All done. Reboot or restart the container.
