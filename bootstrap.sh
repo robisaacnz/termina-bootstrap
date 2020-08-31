@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo Chrome OS Termina bootstrap is running.
+
 # Update package keys
 sudo apt-key adv --refresh-keys --keyserver keyserver.ubuntu.com
 curl -sL https://packagecloud.io/shiftkey/desktop/gpgkey | sudo apt-key add -
