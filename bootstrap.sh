@@ -5,7 +5,7 @@ echo -e "[👢] Chrome OS Termina bootstrap is running."
 echo -e "[👢] Updating package keys."
 sudo apt-key adv --refresh-keys --keyserver keyserver.ubuntu.com
 curl -sL https://packagecloud.io/shiftkey/desktop/gpgkey | sudo apt-key add -
-sudo sh -c 'echo -e "deb [arch=amd64] https://packagecloud.io/shiftkey/desktop/any/ any main" > /etc/apt/sources.list.d/packagecloud-shiftkey-desktop.list'
+sudo sh -c 'echo "deb [arch=amd64] https://packagecloud.io/shiftkey/desktop/any/ any main" > /etc/apt/sources.list.d/packagecloud-shiftkey-desktop.list'
 echo -e "[👢] Package keys updated.\n"
 
 echo -e "[👢] Installing pending updates."
