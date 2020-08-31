@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo -e "[👢] Chrome OS Termina bootstrap is running."
+echo -e "\n[👢] Chrome OS Termina bootstrap is running.\n"
 
 echo -e "[👢] Updating package keys."
 sudo apt-key adv --refresh-keys --keyserver keyserver.ubuntu.com
@@ -25,7 +25,7 @@ echo -e "[👢] VS Code display name shortened.\n"
 # Add basic settings for VS Code
 if [ ! -f "$HOME/.config/Code/User/settings.json" ]; then
   echo -e "[👢] Adding basic settings for VS Code."
-  touch $HOME/.config/Code/User/settings.json
+  mkdir -p $HOME/.config/Code/User/
   echo -e "{
   \"workbench.colorTheme\": \"Default Light+\",
   \"window.titleBarStyle\": \"custom\",
