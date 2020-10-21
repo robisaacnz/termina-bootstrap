@@ -6,6 +6,8 @@ echo -e "[👢] Updating package keys."
 sudo apt-key adv --refresh-keys --keyserver keyserver.ubuntu.com
 curl -sL https://packagecloud.io/shiftkey/desktop/gpgkey | sudo apt-key add -
 sudo sh -c 'echo "deb [arch=amd64] https://packagecloud.io/shiftkey/desktop/any/ any main" > /etc/apt/sources.list.d/packagecloud-shiftkey-desktop.list'
+sudo apt-key --keyring /usr/share/keyrings/1password.gpg adv --keyserver keyserver.ubuntu.com --recv-keys 3FEF9748469ADBE15DA7CA80AC2D62742012EA22
+echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/1password.gpg] https://downloads.1password.com/linux/debian edge main' | sudo tee /etc/apt/sources.list.d/1password.list
 echo -e "[👢] Package keys updated.\n"
 
 echo -e "[👢] Installing pending updates."
@@ -39,6 +41,11 @@ fi
 echo -e "[👢] Installing GitHub Desktop."
 sudo apt install -y github-desktop
 echo -e "[👢] GitHub Desktop installed.\n"
+
+
+echo -e "[👢] Installing 1Password."
+sudo apt install -y 1password
+echo -e "[👢] 1Password installed.\n"
 
 # Install flatpak
 # Required to install Apostrophe
